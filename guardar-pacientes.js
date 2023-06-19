@@ -7,9 +7,9 @@ formularioPaciente.addEventListener('submit', (event) => {
         //atributo = informacion del campo
         nombrePaciente: document.getElementById('nombre').value, 
         apellidoPaciente: document.getElementById('apellido').value,
-        cedulaPaciente: document.getElementById('cedula').value,
-        edadPaciente: document.getElementById('edad').value,
-        telefonoPaciente: document.getElementById('telefono').value,
+        cedulaDueño: document.getElementById('cedula').value,
+        edadMascota: document.getElementById('edad').value,
+        telefonoDueño: document.getElementById('telefono').value,
         especialidad: document.getElementById('especialidad').value,
     };
     guardarEnCookie(datosPacientes)
