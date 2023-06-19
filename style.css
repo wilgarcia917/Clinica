@@ -106,6 +106,24 @@ th {
     color:royalblue;
     font-size: 30px;
 }
+ a:link, a:visited, a:focus {
+        background: deepskyblue;
+        color: white;
+        
+      }
+      
+      a:hover {
+        background:lightskyblue;
+        color:black;
+        font-size: 33px;
+      }
+      
+      a:active {
+        background: rgb(80, 143, 220);
+        color: white;
+        font-size: 34px;
+      }
+    
 
 .listado-servicios li::marker {
     content: 🐾;
