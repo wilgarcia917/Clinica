@@ -1,42 +1,42 @@
 //obtenemos el formulario
-const formularioMascota = document.getElementById('registro-pacientes-form');
+const formularioPaciente = document.getElementById('registro-pacientes-form');
 //Cuando el formulario se envie va hacer lo que esta entre corchetes (5-21)
-formularioMascota.addEventListener('submit', (event) => {
+formularioPaciente.addEventListener('submit', (event) => {
     event.preventDefault();//quietara por defecto el envio del formulario
-    const datosMascota = {  //definiendo un objeto
+    const datosPaciente = {  //definiendo un objeto
         //atributo = informacion del campo
-        nombreMascota: document.getElementById('nombre').value, 
+        nombrePaciente: document.getElementById('nombre').value, 
         nombreDueño: document.getElementById('apellido').value,
         cedulaDueño: document.getElementById('cedula').value,
-        edadMascota: document.getElementById('edad').value,
+        edadPaciente: document.getElementById('edad').value,
         telefonoDueño: document.getElementById('telefono').value,
         especialidad: document.getElementById('especialidad').value,
     };
-    guardarEnCookie(datosMascota)
+    guardarEnCookie(datosPaciente)
     const confirmacion = confirm('¿Desea ver los datos o seguir añadiendo pacientes?');
     if (confirmacion) {
         window.location.href = 'pacientes.html';
     } else {
         console.log('Continuando en el formulario');
-        formularioMascota.reset()
+        formularioPaciente.reset()
     }
 });
-// Función para guardar una mascota en la cookie
-function guardarEnCookie(mascota) {
-    // Obtener los datos de la cookie actual de mascotas
-    let datosMasco = getCookie("mascotas");
+// Función para guardar una paciente en la cookie
+function guardarEnCookie(paciente) {
+    // Obtener los datos de la cookie actual de pacientes
+    let datosMasco = getCookie("pacientes");
     // Si la cookie está vacía, inicializarla como un arreglo vacío
     if (datosMasco === "") {
         datosMasco = "[]";
     }
     // Convertir la cookie en un arreglo de objetos
-    const mascotas = JSON.parse(datosMasco);
-    // Agregar la nueva mascota al arreglo
-    mascotas.push(mascota);
-    // Convertir el arreglo de mascotas de nuevo a un JSON
-    const nuevoJSON = JSON.stringify(mascotas);
+    const pacientes = JSON.parse(datosMasco);
+    // Agregar la nueva paciente al arreglo
+    pacientes.push(paciente);
+    // Convertir el arreglo de pacientes de nuevo a un JSON
+    const nuevoJSON = JSON.stringify(pacientes);
     // Guardar el JSON en la cookie
-    setCookie("mascotas", nuevoJSON);
+    setCookie("pacientes", nuevoJSON);
 }
 
 // Función para obtener los datos de la cookie
