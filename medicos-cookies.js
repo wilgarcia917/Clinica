@@ -7,6 +7,18 @@ const cuerpoTabla = tablaMedicos.querySelector("tbody");
 for (let i = 0; i < medicosCookie.length; i++) {
     const medico = medicosCookie[i];
     const fila = cuerpoTabla.insertRow();
+     const nombreMedico = fila.insertCell();
+    nombreMedico.textContent = medico.nombreMedico;
+    const apellidoMedico = fila.insertCell();
+    apellidoMedico.textContent = medico.apellidoMedico;
+    const cedula = fila.insertCell();
+    cedula.textContent = medico.cedula;
+    const especialidad = fila.insertCell();
+    especialidad.textContent = medico.especialidad;
+    const consultorio = fila.insertCell();
+    consultorio.textContent = medico.consultorio;
+    const correoContacto = fila.insertCell();
+    correoContacto.textContent = medico.correo;
    
   
     //colocar las pacientes que atiende el medico
