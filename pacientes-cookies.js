@@ -3,22 +3,22 @@
 const pacientesCookie = JSON.parse(getCookie('pacientes'));
 const medicosCookie = JSON.parse(getCookie('medicos') || "[]");
 //buscar la tabla pacientes en HTML para agregar las nuevas pacientes
-const tablaPacientes = document.getElementById("tabla-pacientes");
-const cuerpoTabla = tablaPacientes.querySelector("tbody");
+const tablaMascotas = document.getElementById("tabla-pacientes");
+const cuerpoTabla = tablaMascotas.querySelector("tbody");
 
 for (let i = 0; i < pacientesCookie.length; i++) {
     const paciente = pacientesCookie[i];
     //insertar fila para agregar pacientes
     const fila = cuerpoTabla.insertRow();
     //insertar celdas para agregar cada uno de los datos de las pacientes
-    const celdaNombrePaciente = fila.insertCell();
+    const celdaNombreMascota = fila.insertCell();
     const celdaNombreDueño = fila.insertCell();
     const celdaCedulaDueño = fila.insertCell();
     const celdaEdadMascota = fila.insertCell();
     const celdaTelefonoDueño = fila.insertCell();
     const celdaEspecialidad = fila.insertCell();
     //agregar la informaciona cada una de las celdas de la tabla
-    celdaNombrePaciente.textContent = paciente.nombreMascota;
+    celdaNombreMascota.textContent = paciente.nombreMascota;
     celdaNombreDueño.textContent = paciente.nombreDueño;
     celdaCedulaDueño .textContent = paciente.cedulaDueño;
     celdaEdadMascota.textContent = paciente.edadMascota;
@@ -52,7 +52,4 @@ function getCookie(nombre) {
     //si no encuentra ninguna cookie devuelve vacio
     return "";
 }
-    }
-    //si no encuentra ninguna cookie devuelve vacio
-    return "";
-}
+
