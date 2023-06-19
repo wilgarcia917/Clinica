@@ -19,8 +19,7 @@ for (let i = 0; i < medicosCookie.length; i++) {
     consultorio.textContent = medico.consultorio;
     const correoContacto = fila.insertCell();
     correoContacto.textContent = medico.correo;
-    const telefonoMedico = fila.insertCell();
-    telefonoMedico.textContent = medico.telefonoMedico;
+  
     //colocar las pacientes que atiende el medico
     //mediante filter encontramos todas las pacientes que tienen esa especialidad
     let pacientesEncontradas = pacientesCookie.filter(paciente => medico.especialidad === paciente.especialidad);
