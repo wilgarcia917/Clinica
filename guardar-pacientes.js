@@ -3,16 +3,16 @@ const formularioPaciente = document.getElementById('registro-pacientes-form');
 //Cuando el formulario se envie va hacer lo que esta entre corchetes (5-21)
 formularioPaciente.addEventListener('submit', (event) => {
     event.preventDefault();//quietara por defecto el envio del formulario
-    const datosPaciente = {  //definiendo un objeto
+    const datosPacientes = {  //definiendo un objeto
         //atributo = informacion del campo
-        nombrePaciente: document.getElementById('nombre').value, 
+        nombreMascota: document.getElementById('nombre').value, 
         nombreDueño: document.getElementById('apellido').value,
         cedulaDueño: document.getElementById('cedula').value,
-        edadPaciente: document.getElementById('edad').value,
+        edadMascota: document.getElementById('edad').value,
         telefonoDueño: document.getElementById('telefono').value,
         especialidad: document.getElementById('especialidad').value,
     };
-    guardarEnCookie(datosPaciente)
+    guardarEnCookie(datosPacientes)
     const confirmacion = confirm('¿Desea ver los datos o seguir añadiendo pacientes?');
     if (confirmacion) {
         window.location.href = 'pacientes.html';
@@ -24,13 +24,13 @@ formularioPaciente.addEventListener('submit', (event) => {
 // Función para guardar una paciente en la cookie
 function guardarEnCookie(paciente) {
     // Obtener los datos de la cookie actual de pacientes
-    let datosMasco = getCookie("pacientes");
+    let datosPacient = getCookie("pacientes");
     // Si la cookie está vacía, inicializarla como un arreglo vacío
-    if (datosMasco === "") {
-        datosMasco = "[]";
+    if (datosPacient === "") {
+        datosPacient = "[]";
     }
     // Convertir la cookie en un arreglo de objetos
-    const pacientes = JSON.parse(datosMasco);
+    const pacientes = JSON.parse(datosPacient);
     // Agregar la nueva paciente al arreglo
     pacientes.push(paciente);
     // Convertir el arreglo de pacientes de nuevo a un JSON
@@ -55,6 +55,9 @@ function getCookie(nombre) {
 }
 
 // Función para guardar datos en la cookie
+function setCookie(nombre, valor) {
+    document.cookie = `${nombre}=${encodeURIComponent(valor)}`;
+}
 function setCookie(nombre, valor) {
     document.cookie = `${nombre}=${encodeURIComponent(valor)}`;
 }
