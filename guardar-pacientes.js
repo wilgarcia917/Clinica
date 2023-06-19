@@ -5,10 +5,10 @@ formularioPaciente.addEventListener('submit', (event) => {
     event.preventDefault();//quietara por defecto el envio del formulario
     const datosPacientes = {  //definiendo un objeto
         //atributo = informacion del campo
-        nombreMascota: document.getElementById('nombre').value, 
+        nombrePaciente: document.getElementById('nombre').value, 
         nombreDueño: document.getElementById('apellido').value,
         cedulaDueño: document.getElementById('cedula').value,
-        edadMascota: document.getElementById('edad').value,
+        edadPaciente: document.getElementById('edad').value,
         telefonoDueño: document.getElementById('telefono').value,
         especialidad: document.getElementById('especialidad').value,
     };
