@@ -21,7 +21,7 @@ for (let i = 0; i < pacientesCookie.length; i++) {
     celdaNombrePaciente.textContent = paciente.nombrePaciente;
     celdaNombreDueño.textContent = paciente.nombreDueño;
     celdaCedulaDueño .textContent = paciente.cedulaDueño;
-    celdaEdadMascota.textContent = paciente.edadMascota;
+    celdaEdadMascota.textContent = paciente.edadPaciente;
     celdaTelefonoDueño.textContent = paciente.telefonoDueño;
     celdaEspecialidad.textContent = paciente.especialidad;
     //colocar el medico que va a tratar la paciente
