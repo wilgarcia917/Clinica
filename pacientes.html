@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTA DE PACIENTES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>CLÍNICA DE LOS ESPECIALISTAS</h1>
+    </header>
+    <main class="tabla-container">
+        <table id="tabla-pacientes">
+            <h2>LISTA DE PACIENTES</h2>
+            <thead>
+                <tr>
+                    <th>Nombre del paciente</th>
+                    <th>Apellido del paciente</th>
+                    <th>Número de cédula</th>
+                    <th>Edad del paciente</th>
+                    <th>Teléfono del paciente</th>
+                    <th>Especialidad requerida</th>
+                    <th>Doctor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Se complementa de manera dinamica -->
+            </tbody>
+        </table>
+        <div class="boton-container">
+            <input type="button" id="botonVolver" value="Volver">
+        </div>
+    </main>
+    <script src="pacientes-cookies.js"></script>
+    <script src="volver.js"></script>
+</body>
+
+</html>
