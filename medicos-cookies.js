@@ -1,6 +1,6 @@
 //cargar los datos de la cookie
 const medicosCookie = JSON.parse(getCookie('medicos'));
-const mascotasCookie = JSON.parse(getCookie('mascotas') || "[]");
+const pacientesCookie = JSON.parse(getCookie('pacientes') || "[]");
 const tablaMedicos = document.getElementById("tabla-medicos");
 const cuerpoTabla = tablaMedicos.querySelector("tbody");
 //length tamaño del arreglo
@@ -21,20 +21,20 @@ for (let i = 0; i < medicosCookie.length; i++) {
     correoContacto.textContent = medico.correo;
     const telefonoMedico = fila.insertCell();
     telefonoMedico.textContent = medico.telefonoMedico;
-    //colocar las mascotas que atiende el medico
-    //mediante filter encontramos todas las mascotas que tienen esa especialidad
-    let mascotasEncontradas = mascotasCookie.filter(mascota => medico.especialidad === mascota.especialidad);
+    //colocar las pacientes que atiende el medico
+    //mediante filter encontramos todas las pacientes que tienen esa especialidad
+    let pacientesEncontradas = pacientesCookie.filter(paciente => medico.especialidad === paciente.especialidad);
     //se creo la celda
-    const medicoMascota = fila.insertCell();
-    if (mascotasEncontradas.length > 0) {
-        medicoMascota.innerHTML = `<ul id="pacientes"></ul>`
-        const pacientes = medicoMascota.querySelector("#pacientes")
-        for (let j = 0; j < mascotasEncontradas.length; j++) {
-            const mascotaEncontrada = mascotasEncontradas[j];
-            pacientes.innerHTML += `<li>${mascotaEncontrada.nombreMascota}</li>`;
+    const medicopaciente = fila.insertCell();
+    if (pacientesEncontradas.length > 0) {
+        medicopaciente.innerHTML = `<ul id="pacientes"></ul>`
+        const pacientes = medicopaciente.querySelector("#pacientes")
+        for (let j = 0; j < pacientesEncontradas.length; j++) {
+            const pacienteEncontrada = pacientesEncontradas[j];
+            pacientes.innerHTML += `<li>${pacienteEncontrada.nombrepaciente}</li>`;
         }
     } else {
-        medicoMascota.textContent = "Sin pacientes";
+        medicopaciente.textContent = "Sin pacientes";
     }
 }
 
