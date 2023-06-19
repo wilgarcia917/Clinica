@@ -57,7 +57,7 @@ input[type="button"] {
 }
 
 input[type="submit"]:hover {
-    background-color:lightskyblue;
+    background-color:deepskyblue;
 }
 
 span {
